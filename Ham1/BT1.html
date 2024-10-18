@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Hàm kiểm tra số nguyên tố
+  function isPrime(number) {
+    // Kiểm tra nếu số nhỏ hơn 2 thì không phải là số nguyên tố
+    if (number < 2) {
+      return false;
+    }
+
+    // Chỉ kiểm tra các ước từ 2 đến căn bậc hai của số đó
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false; // Nếu tìm thấy ước số khác 1 và chính nó, không phải số nguyên tố
+      }
+    }
+    return true; // Nếu không tìm thấy ước nào thì là số nguyên tố
+  }
+
+  // Lấy số nhập vào từ người dùng
+  let number = parseInt(prompt("Nhập số cần check:"));
+
+  // Kiểm tra và hiển thị kết quả
+  if (isNaN(number)) {
+    alert("Vui lòng nhập một số hợp lệ.");
+  } else if (isPrime(number)) {
+    alert(number + " là số nguyên tố.");
+  } else {
+    alert(number + " không phải là số nguyên tố.");
+  }
+</script>
+
+</body>
+</html>

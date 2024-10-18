@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Hàm chuyển foot sang meter
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
+
+    // Hàm chuyển meter sang foot
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
+
+    // Hàm in kết quả
+    function displayConversion(input, convertedValue, unitFrom, unitTo) {
+        document.write(input + " " + unitFrom + " = " + convertedValue.toFixed(3) + " " + unitTo + "<br>");
+    }
+
+    // Yêu cầu người dùng nhập foot và kiểm tra giá trị hợp lệ
+    let foot = parseFloat(prompt("Nhập foot: "));
+    if (!isNaN(foot)) {
+        let meterResult = footToMeter(foot);
+        displayConversion(foot, meterResult, "foot", "meter");
+    } else {
+        document.write("Vui lòng nhập một số hợp lệ cho foot.<br>");
+    }
+
+    // Yêu cầu người dùng nhập meter và kiểm tra giá trị hợp lệ
+    let meter = parseFloat(prompt("Nhập meter: "));
+    if (!isNaN(meter)) {
+        let footResult = meterToFoot(meter);
+        displayConversion(meter, footResult, "meter", "foot");
+    } else {
+        document.write("Vui lòng nhập một số hợp lệ cho meter.");
+    }
+</script>
+
+</body>
+</html>

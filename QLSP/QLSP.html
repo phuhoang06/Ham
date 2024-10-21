@@ -7,77 +7,20 @@
 </head>
 <body>
 <h1>Quản lý danh sách sản phẩm</h1>
-
-<form id="addProductForm">
-  <input type="text" id="newProductName" placeholder="Nhập tên sản phẩm" required>
-  <button type="submit">Thêm</button>
-</form>
-
-<table border="1" id="productTable">
-  <thead>
-  <tr>
-    <th>STT</th>
-    <th>Tên sản phẩm</th>
-    <th>Thao tác</th>
-  </tr>
-  </thead>
-  <tbody>
-  <!-- Danh sách sản phẩm sẽ được hiển thị tại đây -->
+<input placeholder="NewProduct" id ="newProduct" type="text">
+<button onclick="addProduct()">Add</button>
+<br><br>
+<table border="1px">
+<tr>
+  <th>Name</th>
+  <th>Edit</th>
+  <th>Delete</th>
+</tr>
+  <tbody id="contents">
   </tbody>
 </table>
 
-<script>
-  let productList = [];
-  let editingIndex = -1; // Biến để lưu vị trí sản phẩm đang sửa
+<script src="index.js"></script>
 
-  // Hàm hiển thị danh sách sản phẩm
-  function displayProducts() {
-    const productTableBody = document.querySelector('#productTable tbody');
-    productTableBody.innerHTML = '';
-
-    productList.forEach((product, index) => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${product}</td>
-                    <td>
-                        <button onclick="editProduct(${index})">Sửa</button>
-                        <button onclick="deleteProduct(${index})">Xóa</button>
-                    </td>
-                `;
-      productTableBody.appendChild(row);
-    });
-  }
-
-  // Hàm thêm hoặc cập nhật sản phẩm
-  document.getElementById('addProductForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const newProductName = document.getElementById('newProductName').value;
-
-    if (editingIndex >= 0) {
-      // Nếu đang sửa sản phẩm, cập nhật tên sản phẩm
-      productList[editingIndex] = newProductName;
-      editingIndex = -1; // Đặt lại chỉ số
-    } else {
-      // Nếu thêm sản phẩm mới
-      productList.push(newProductName);
-    }
-
-    displayProducts();
-    document.getElementById('newProductName').value = ''; // Xóa ô nhập
-  });
-
-  // Hàm xóa sản phẩm
-  function deleteProduct(index) {
-    productList.splice(index, 1);
-    displayProducts();
-  }
-
-  // Hàm sửa sản phẩm
-  function editProduct(index) {
-    editingIndex = index; // Lưu chỉ số sản phẩm đang sửa
-    document.getElementById('newProductName').value = productList[index]; // Hiển thị tên sản phẩm trong ô nhập
-  }
-</script>
 </body>
 </html>

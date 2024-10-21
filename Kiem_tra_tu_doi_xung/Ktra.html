@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="isPalindrome()">click me</button>
+<script>
+  function isPalindrome(s) {
+    let palindrome = prompt('Nhap vao ki tu')
+    let n = palindrome.length-1;
+    for (let i = 0; i < n; i++) {
+      if (palindrome[i] === palindrome[n - i]) {
+        alert('day la chuoi palindrome')
+      } else {
+        alert('day khong phai chuoi palindrome')
+      }
+    }
+  }
+</script>
+</body>
+</html>

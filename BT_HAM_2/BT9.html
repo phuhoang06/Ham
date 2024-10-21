@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function countCharacter(arr, char) {
+    const count = arr.reduce((acc, c) => acc + (c === char ? 1 : 0), 0);
+    return count > 0 ? count : -1;
+  }
+
+  const array = ['a', 'b', 'c', 'a', 'd', 'a'];
+  const char = 'a';
+  const result = countCharacter(array, char);
+  console.log(result); // Kết quả: 3
+
+</script>
+</body>
+</html>

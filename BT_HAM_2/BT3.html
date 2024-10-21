@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="n" type="number">
+<button onclick="myFunction()">tinh</button>
+<p id="demo"></p>
+<script>
+  function myFunction() {
+    let a = parseFloat(document.getElementById("n").value);
+    let result =1;
+    if (a>0) {
+      for (let i = 1; i <= a; i++) {
+        result = result * i;
+      }
+    }
+      else if (a == 0){
+        result = 1
+      }
+      else {
+        result = 'khong phai so nguyen';
+      }
+    document.getElementById("demo").innerHTML = result;
+  }
+</script>
+</body>
+</html>

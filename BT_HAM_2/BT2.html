@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="a" type="number" placeholder="tinh s hinh vuong">
+<button onclick="shinhvuong()">Tinh</button>
+<p id="p"></p>
+<script>
+function shinhvuong() {
+  let a = document.getElementById("a").value;
+  let b = a*a;
+  document.getElementById("p").innerHTML = b;
+}
+</script>
+</body>
+</html>
